@@ -6,11 +6,12 @@
 
 <div style="text-align: center;">
    <h1>Welcome to Mario Hangman!</h1>
-   <div id="placeholder"></div>
-   <div id="gamestatus">Good luck!</div>
+   <div id="placeholder"></div><br>
+   <div id="gamestatus"></div>
+   <div id="lives"></div>
    <br/>
    <div id="wins"></div>
-   <div id="userGuess">Guessed Letters</div>
+   <div id="userGuess"></div>
 </div>
 
 <style type="text/css">
@@ -34,7 +35,7 @@
 //All of variables.
 var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
 var word;
-var lives =5;
+var lives =10;
 var guess;
 var placeholder;
 var correct;
@@ -45,6 +46,7 @@ var wins = 0;
 function newGame() {
   placeholder = "";
   lives = 5;
+  wins = 0;
   word = marioList[Math.floor(Math.random() * marioList.length)];
   splitWord = word.split("");
   currentWord = 0;
@@ -57,7 +59,7 @@ function newGame() {
     placeholder = placeholder + "_";
   }
 document.getElementById("placeholder").innerHTML = placeholder;
-document.getElementById("gamestatus").innerHTML = "Good Luck!";
+document.getElementById("gamestatus").innerHTML = "Push any key to begin.";
 //----------------
 }
 // Function to transfer keypress to userguess.
@@ -66,7 +68,7 @@ document.onkeyup = function(event) {
   var correct = 0;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
   console.log(word);
-  // document.getElementById("userGuess").innerHTML = userGuess;
+  // document.querySelector("#userGuess").innerHTML = html;
   for (var i = 0;i<splitWord.length;i++) {
     //If correct.
     if (userGuess == word.substring(i, i + 1)) {
@@ -82,7 +84,10 @@ document.onkeyup = function(event) {
   if (placeholder.indexOf("_") == -1)
     {
       wins++;
-      alert("Ayyyyy, you got one!");
+      var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb3/smb3_1-up.wav');
+      audio.play();
+      var html = "Wins: " + wins;
+      document.querySelector("#wins").innerHTML = html;
       newGame();
     }
   //If you run out of lives, the game restarts.
@@ -91,8 +96,6 @@ document.onkeyup = function(event) {
       alert("You lose. Goodbye.");
       newGame();
     }
-      var html = "Wins: " + wins;
-      document.querySelector("#wins").innerHTML = html;
 }
 newGame();
 //----------------
