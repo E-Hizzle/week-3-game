@@ -36,7 +36,7 @@ var placeholder;
 var correct;
 var wordLength;
 var wordSubstring;
-var currentWord;
+var wins;
 //----------------
 function newGame() {
   placeholder = "";
@@ -61,7 +61,7 @@ document.onkeyup = function(event) {
   var guess;
   var correct = 0;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-  document.getElementById("userGuess").innerHTML
+  // document.getElementById("userGuess").innerHTML = userGuess;
   for (var i = 0;i<splitWord.length;i++) {
     //If correct.
     if (userGuess == word.substring(i, i + 1)) {
@@ -74,9 +74,11 @@ document.onkeyup = function(event) {
     {
       lives--;
     }
-  if (placeholder == splitWord)
+  if (placeholder.indexOf("_") == -1)
     {
+      wins++;
       alert("Ayyyyy, you got one!");
+      newGame();
     }
   //If you run out of lives, the game restarts.
   if (lives == 0)
@@ -90,24 +92,3 @@ newGame();
 </script>
 </body>
 </html>
-
-<!-- 
-Option Two: Hangman Game
-1.  Watch the demo
-2.  choose a theme for your game.
-o In the example, we used an 80s theme. All the words are famous bands or musicians from the 80s. Please choose whatever theme you'd like.
-3.  use key events to get the letter that the user typed
-4.  organize your game code inside of an object, except the key events to get the letter tha
-5.  Display the following on the page:
-Press any key to get started!
-Wins: # of times user guessed the word correctly
-If the word is madonna then display it initially like this:
-
-as the user guesses the correct letter, make the word display like this: mado _ _ a
-Number of Guesses Remaining: # of guesses remaining for the user
-Letters Already Guessed: letters the user has guessed.
-1.  The game should automatically choose another word and make the user play it.
-Bonuses
-1.  play a sound or song when the user guesses the word correctly - in our case it was a song by the artist
-2.  style your game so that it looks like your theme.
- -->
