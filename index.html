@@ -19,6 +19,7 @@
    <div id="showLetter"></div>
 </div>
 <body>
+
 <!-- STYLE -->
 <style type="text/css">
   #placeholder {
@@ -31,7 +32,7 @@
     background-position: top center !important;
     background-repeat: no-repeat !important;
     background-attachment: fixed;
-}
+  }
   #wins {
     font-size: 40px;
         font-family: 'Sigmar One', cursive;
@@ -77,7 +78,7 @@
 //All of variables.
 var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
 var word;
-var lives =9;
+var lives =11;
 var guess;
 var placeholder;
 var correct;
@@ -87,11 +88,15 @@ var wins = 0;
 //----------------
 function newGame() {
   placeholder = "";
-  lives = 10;
+  if (lives == 0) 
+  {
+    lives = 10;
+  }
   word = marioList[Math.floor(Math.random() * marioList.length)];
   splitWord = word.split("");
   currentWord = 0;
-  // word = marioList[currentWord];
+  var html = "Wins: " + wins;
+  document.querySelector("#wins").innerHTML = html;
   wordLength = word.length;
   wordSubstring = word.substring;
   //Adding underscores for every character in the phrase. SUCCESS.
@@ -108,8 +113,6 @@ document.onkeyup = function(event) {
   var guess;
   var correct = 0;
   var showLetter ="";
-  var html2 = "Lives: " + lives;
-  document.querySelector("#lives").innerHTML = html2;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
   console.log(word);
   for (var i = 0;i<splitWord.length;i++) {
@@ -131,8 +134,6 @@ document.onkeyup = function(event) {
       wins++;
       var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb3/smb3_1-up.wav');
       audio.play();
-      var html = "Wins: " + wins;
-      document.querySelector("#wins").innerHTML = html;
       newGame();
     }
   //If you run out of lives, the game restarts.
@@ -140,9 +141,11 @@ document.onkeyup = function(event) {
     {
       var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb3/smb3_game_over.wav');
       audio.play();
-      lives == 10;
       newGame();
     }
+    var html2 = "Lives: " + lives;
+    document.querySelector("#lives").innerHTML = html2;
+
 }
 newGame();
 //----------------
