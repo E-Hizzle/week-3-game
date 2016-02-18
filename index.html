@@ -9,9 +9,11 @@
    <div id="placeholder"></div>
    <div id="gamestatus">Good luck!</div>
    <br/>
-   <div id="guessedletters">Guessed Letters</div>
+   <div id="userGuess">Guessed Letters</div>
 </div>
 <script type="text/javascript">
+
+window.onLoad = function () {
 
 //All of variables.
 var marioList = ["mario", "luigi", "wario", "waluigi", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "mushroom", "shell", "pipe", "coins"];  
@@ -29,7 +31,6 @@ function newGame() {
   lives = 10;
   word = marioList[Math.floor(Math.random() * marioList.length)];
   splitWord = word.split("");
-  console.log(word); //console
   currentWord = 0;
   // word = marioList[currentWord];
   wordLength = word.length;
@@ -37,7 +38,7 @@ function newGame() {
 //Adding underscores for every character in the phrase. SUCCESS.
   for (var i = 0; i<splitWord.length; i++)
   {
-    placeholder = placeholder + "_ ";
+    placeholder = placeholder + "_";
   }
   console.log(placeholder)
 document.getElementById("placeholder").innerHTML = placeholder;
@@ -49,7 +50,8 @@ document.onkeyup = function(event) {
   var guess;
   var correct = 0;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-  document.getElementById("guessedletters").innerHTML
+  var compareGuess = userGuess.split("");
+  document.getElementById("userGuess").innerHTML
   console.log(userGuess); // Console.
   for (var i = 0;i<splitWord.length;i++) {
     //If correct.
@@ -57,25 +59,26 @@ document.onkeyup = function(event) {
       correct++;
       placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
       document.getElementById("placeholder").innerHTML = placeholder;
-    } console.log(correct);
+    }
   }
   if (correct == 0)
   {
     lives--;
   }
-  if (placeholder == splitWord) 
+  if (placeholder == splitWord)
   {
-    alert("Ayyyyy, you got one!")
+    alert("Ayyyyy, you got one!");
   }
   //If you run out of lives, the game restarts.
   if (lives == 0)
   {
-    alert("You lose. Goodbye.")
+    alert("You lose. Goodbye.");
     newGame();
   }
 }
 newGame();
 //----------------
+}
 </script>
 </body>
 </html>
