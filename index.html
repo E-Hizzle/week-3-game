@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <h1>Welcome to Mario Hangman!</h1>
+<div style="text-align: center;">
+   <h1>Hangman</h1>
+   <div id="placeholder"> </div>
+   <div id="gamestatus">Game running</div>
+   <br/>
+   <div>Guessed Letters</div>
+   <div id="guessedletters">(guessed letters will go here)</div>
+</div>
+<script type="text/javascript">
+
+//All of variables.
+var marioList = ["mario", "luigi", "wario", "waluigi", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "mushroom", "shell", "pipe", "coins"];  
+var word;
+var lives;
+var guess;
+var placeholder;
+var wordLength;
+var wordSubstring;
+var currentWord;
+//----------------
+function newGame() {
+  placeholder = "";
+  lives = 10;
+  word = marioList[Math.floor(Math.random() * marioList.length)];
+  console.log(word); //console
+  currentWord = 0;
+  word = marioList[currentWord];
+  wordLength = word.length;
+  wordSubstring = currentWord.substring;
+//Adding underscores for every character in the phrase.
+  for (var i = 0; i<word.length; i++)
+  {
+    placeholder = placeholder + "_ "
+  }
+document.getElementById("placeholder").innerHTML = placeholder;
+document.getElementById("gamestatus").innerHTML = "Game Running.";
+//----------------
+}
+// Function to transfer keypress to userguess.
+document.onkeyup = function(event) {
+  var guess;
+  var correct = 0;
+  var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+  console.log(userGuess);
+  for (var i = 0;i<wordLength;i++) {
+    //If correct.
+    if (userGuess == word.substring(i, i + 1)) {
+      correct++;
+      placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
+      document.getElementById("placeholder").innerHTML = placeholder;
+    }
+  }
+  if (correct == 0)
+  {
+    lives--;
+  }
+  if (placeholder == word) 
+  {
+    alert("Ayyyyy, you got one!")
+  }
+  //If you run out of lives, the game restarts.
+  if (lives == 0)
+  {
+    alert("You lose. Goodbye.")
+    newGame();
+  }
+}
+newGame();
+//----------------
+</script>
+</body>
+</html>
+
+<!-- 
+Option Two: Hangman Game
+1.  Watch the demo
+2.  choose a theme for your game.
+o In the example, we used an 80s theme. All the words are famous bands or musicians from the 80s. Please choose whatever theme you'd like.
+3.  use key events to get the letter that the user typed
+4.  organize your game code inside of an object, except the key events to get the letter tha
+5.  Display the following on the page:
+Press any key to get started!
+Wins: # of times user guessed the word correctly
+If the word is madonna then display it initially like this:
+
+as the user guesses the correct letter, make the word display like this: mado _ _ a
+Number of Guesses Remaining: # of guesses remaining for the user
+Letters Already Guessed: letters the user has guessed.
+1.  The game should automatically choose another word and make the user play it.
+Bonuses
+1.  play a sound or song when the user guesses the word correctly - in our case it was a song by the artist
+2.  style your game so that it looks like your theme.
+ -->
