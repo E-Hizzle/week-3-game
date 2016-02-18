@@ -4,10 +4,9 @@
   <title></title>
 </head>
 <body>
-  <h1>Welcome to Mario Hangman!</h1>
 <div style="text-align: center;">
-   <h1>Hangman</h1>
-   <div id="placeholder"> </div>
+   <h1>Welcome to Mario Hangman!</h1>
+   <div id="placeholder"></div>
    <div id="gamestatus">Game running</div>
    <br/>
    <div>Guessed Letters</div>
@@ -39,6 +38,7 @@ function newGame() {
   {
     placeholder = placeholder + "_ "
   }
+  console.log(placeholder)
 document.getElementById("placeholder").innerHTML = placeholder;
 document.getElementById("gamestatus").innerHTML = "Game Running.";
 //----------------
