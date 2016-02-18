@@ -19,7 +19,7 @@
    <div id="userGuess"></div>
 </div>
 <body>
-
+<!-- STYLE -->
 <style type="text/css">
   #placeholder {
     letter-spacing: 0.5em;
@@ -47,9 +47,16 @@
   }
   #marioImage {
     position: relative;
-    bottom: 20px;
+    bottom: 20px;  
+  }
+  footer {
+    position: fixed;
+    bottom: 25px;
+    text-align: center;
+    left: 42.5%;
   }
 </style>
+<!-- STYLE -->
 
 <script type="text/javascript">
   //MUSIC
@@ -95,9 +102,8 @@ document.onkeyup = function(event) {
   for (var i = 0;i<splitWord.length;i++) {
     //If correct.
     if (userGuess == word.substring(i, i + 1)) {
-        var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb2/smb2_coin.wav');
+      var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb2/smb2_coin.wav');
       audio.play();
-
       correct++;
       placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
       document.getElementById("placeholder").innerHTML = placeholder;
@@ -128,4 +134,7 @@ newGame();
 //----------------
 </script>
 </body>
+<footer>
+  <img src="http://31.media.tumblr.com/b1f2ccf6f2540069f197980659267e2b/tumblr_myj621dcMH1rby4vso1_500.gif" height="80" width="auto">
+</footer>
 </html>
