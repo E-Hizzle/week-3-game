@@ -12,11 +12,11 @@
    <img src="https://49.media.tumblr.com/bd2a720fed1e439118910654795de206/tumblr_mit0hgK0ph1s4m8y1o1_500.gif" width="50" height="50">
    </h1>
    <div id="placeholder"></div><br>
-   <div id="gamestatus"></div>
+   <div id="gamestatus"></div><br>
    <div id="lives"></div>
    <br/>
    <div id="wins"></div>
-   <div id="userGuess"></div>
+   <div id="showLetter"></div>
 </div>
 <body>
 <!-- STYLE -->
@@ -25,8 +25,7 @@
     letter-spacing: 0.5em;
   }
   body {
-    background-image: url("http://wallpapercave.com/wp/7pDoP2C.png"); /*You will specify your image path here.*/
-    -moz-background-size: cover;
+    background-image: url("http://wallpapercave.com/wp/7pDoP2C.png");
     -webkit-background-size: cover;
     background-size: cover;
     background-position: top center !important;
@@ -35,6 +34,13 @@
 }
   #wins {
     font-size: 40px;
+        font-family: 'Sigmar One', cursive;
+
+  }
+  #gamestatus {
+    font-family: 'Sigmar One', cursive;
+    color: purple;
+
   }
   h1 {
     color: red;
@@ -54,6 +60,11 @@
     bottom: 25px;
     text-align: center;
     left: 42.5%;
+  }
+  #lives {
+    font-size: 25px;
+    font-family: 'Sigmar One', cursive;
+    color: orange;
   }
 </style>
 <!-- STYLE -->
@@ -76,14 +87,14 @@ var wins = 0;
 //----------------
 function newGame() {
   placeholder = "";
-  lives = 5;
+  // lives = 11;
   word = marioList[Math.floor(Math.random() * marioList.length)];
   splitWord = word.split("");
   currentWord = 0;
   // word = marioList[currentWord];
   wordLength = word.length;
   wordSubstring = word.substring;
-//Adding underscores for every character in the phrase. SUCCESS.
+  //Adding underscores for every character in the phrase. SUCCESS.
   for (var i = 0; i<splitWord.length; i++)
   {
     placeholder = placeholder + "_";
@@ -96,9 +107,11 @@ document.getElementById("gamestatus").innerHTML = "Push any key to begin.";
 document.onkeyup = function(event) {
   var guess;
   var correct = 0;
+  var showLetter ="";
+  var html2 = "Lives: " + lives;
+  document.querySelector("#lives").innerHTML = html2;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
   console.log(word);
-  // document.querySelector("#userGuess").innerHTML = html;
   for (var i = 0;i<splitWord.length;i++) {
     //If correct.
     if (userGuess == word.substring(i, i + 1)) {
