@@ -16,7 +16,7 @@
 //All of variables.
 var marioList = ["mario", "luigi", "wario", "waluigi", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "mushroom", "shell", "pipe", "coins"];  
 var word;
-var lives =10;
+var lives =5;
 var guess;
 var placeholder;
 var correct;
@@ -31,13 +31,13 @@ function newGame() {
   splitWord = word.split("");
   console.log(word); //console
   currentWord = 0;
-  word = marioList[currentWord];
+  // word = marioList[currentWord];
   wordLength = word.length;
-  wordSubstring = currentWord.substring;
+  wordSubstring = word.substring;
 //Adding underscores for every character in the phrase. SUCCESS.
   for (var i = 0; i<splitWord.length; i++)
   {
-    placeholder = placeholder + "_ "
+    placeholder = placeholder + "_ ";
   }
   console.log(placeholder)
 document.getElementById("placeholder").innerHTML = placeholder;
@@ -57,7 +57,7 @@ document.onkeyup = function(event) {
       correct++;
       placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
       document.getElementById("placeholder").innerHTML = placeholder;
-    }
+    } console.log(correct);
   }
   if (correct == 0)
   {
