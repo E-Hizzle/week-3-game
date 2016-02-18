@@ -7,7 +7,7 @@
 <div style="text-align: center;">
    <h1>Welcome to Mario Hangman!</h1>
    <div id="placeholder"></div>
-   <div id="gamestatus">Game running</div>
+   <div id="gamestatus">Good luck!</div>
    <br/>
    <div id="guessedletters">Guessed Letters</div>
 </div>
@@ -16,9 +16,10 @@
 //All of variables.
 var marioList = ["mario", "luigi", "wario", "waluigi", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "mushroom", "shell", "pipe", "coins"];  
 var word;
-var lives;
+var lives =10;
 var guess;
 var placeholder;
+var correct;
 var wordLength;
 var wordSubstring;
 var currentWord;
@@ -33,14 +34,14 @@ function newGame() {
   word = marioList[currentWord];
   wordLength = word.length;
   wordSubstring = currentWord.substring;
-//Adding underscores for every character in the phrase.
+//Adding underscores for every character in the phrase. SUCCESS.
   for (var i = 0; i<splitWord.length; i++)
   {
     placeholder = placeholder + "_ "
   }
   console.log(placeholder)
 document.getElementById("placeholder").innerHTML = placeholder;
-document.getElementById("gamestatus").innerHTML = "Game Running.";
+document.getElementById("gamestatus").innerHTML = "Good Luck!";
 //----------------
 }
 // Function to transfer keypress to userguess.
@@ -48,8 +49,9 @@ document.onkeyup = function(event) {
   var guess;
   var correct = 0;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-  console.log(userGuess);
-  for (var i = 0;i<wordLength;i++) {
+  document.getElementById("guessedletters").innerHTML
+  console.log(userGuess); // Console.
+  for (var i = 0;i<splitWord.length;i++) {
     //If correct.
     if (userGuess == word.substring(i, i + 1)) {
       correct++;
@@ -61,7 +63,7 @@ document.onkeyup = function(event) {
   {
     lives--;
   }
-  if (placeholder == word) 
+  if (placeholder == splitWord) 
   {
     alert("Ayyyyy, you got one!")
   }
