@@ -78,7 +78,7 @@
 //All of variables.
 var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
 var word;
-var lives =11;
+var lives =1;
 var guess;
 var placeholder;
 var correct;
@@ -91,6 +91,7 @@ function newGame() {
   if (lives == 0) 
   {
     lives = 10;
+    wins = 0;
   }
   word = marioList[Math.floor(Math.random() * marioList.length)];
   splitWord = word.split("");
@@ -112,9 +113,10 @@ document.getElementById("gamestatus").innerHTML = "Push any key to begin.";
 document.onkeyup = function(event) {
   var guess;
   var correct = 0;
-  var showLetter ="";
+  var showLetter =[];
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
   console.log(word);
+  var showLetter = showLetter + userGuess;
   for (var i = 0;i<splitWord.length;i++) {
     //If correct.
     if (userGuess == word.substring(i, i + 1)) {
