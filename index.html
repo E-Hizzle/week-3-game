@@ -3,7 +3,7 @@
 <head>
   <title>Mario Hangman</title>
 </head>
-<body>
+
 <div style="text-align: center;">
    <h1>Welcome to Mario Hangman!</h1>
    <div id="placeholder"></div>
@@ -11,9 +11,21 @@
    <br/>
    <div id="userGuess">Guessed Letters</div>
 </div>
+
+<style type="text/css">
+  body {
+    background-image: url("http://wallpapercave.com/wp/7pDoP2C.png"); /*You will specify your image path here.*/
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+}
+</style>
+
 <script type="text/javascript">
 
-window.onLoad = function () {
 
 //All of variables.
 var marioList = ["mario", "luigi", "wario", "waluigi", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "mushroom", "shell", "pipe", "coins"];  
@@ -28,7 +40,7 @@ var currentWord;
 //----------------
 function newGame() {
   placeholder = "";
-  lives = 10;
+  lives = 5;
   word = marioList[Math.floor(Math.random() * marioList.length)];
   splitWord = word.split("");
   currentWord = 0;
@@ -40,7 +52,6 @@ function newGame() {
   {
     placeholder = placeholder + "_";
   }
-  console.log(placeholder)
 document.getElementById("placeholder").innerHTML = placeholder;
 document.getElementById("gamestatus").innerHTML = "Good Luck!";
 //----------------
@@ -50,9 +61,7 @@ document.onkeyup = function(event) {
   var guess;
   var correct = 0;
   var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-  var compareGuess = userGuess.split("");
   document.getElementById("userGuess").innerHTML
-  console.log(userGuess); // Console.
   for (var i = 0;i<splitWord.length;i++) {
     //If correct.
     if (userGuess == word.substring(i, i + 1)) {
@@ -62,23 +71,22 @@ document.onkeyup = function(event) {
     }
   }
   if (correct == 0)
-  {
-    lives--;
-  }
+    {
+      lives--;
+    }
   if (placeholder == splitWord)
-  {
-    alert("Ayyyyy, you got one!");
-  }
+    {
+      alert("Ayyyyy, you got one!");
+    }
   //If you run out of lives, the game restarts.
   if (lives == 0)
-  {
-    alert("You lose. Goodbye.");
-    newGame();
-  }
+    {
+      alert("You lose. Goodbye.");
+      newGame();
+    }
 }
 newGame();
 //----------------
-}
 </script>
 </body>
 </html>
