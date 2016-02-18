@@ -77,7 +77,7 @@
 //All of variables.
 var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
 var word;
-var lives =10;
+var lives =9;
 var guess;
 var placeholder;
 var correct;
@@ -87,7 +87,7 @@ var wins = 0;
 //----------------
 function newGame() {
   placeholder = "";
-  // lives = 11;
+  lives = 10;
   word = marioList[Math.floor(Math.random() * marioList.length)];
   splitWord = word.split("");
   currentWord = 0;
@@ -140,6 +140,7 @@ document.onkeyup = function(event) {
     {
       var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb3/smb3_game_over.wav');
       audio.play();
+      lives == 10;
       newGame();
     }
 }
