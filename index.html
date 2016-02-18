@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Mario Hangman</title>
 </head>
 <body>
 <div style="text-align: center;">
@@ -27,13 +27,14 @@ function newGame() {
   placeholder = "";
   lives = 10;
   word = marioList[Math.floor(Math.random() * marioList.length)];
+  splitWord = word.split("");
   console.log(word); //console
   currentWord = 0;
   word = marioList[currentWord];
   wordLength = word.length;
   wordSubstring = currentWord.substring;
 //Adding underscores for every character in the phrase.
-  for (var i = 0; i<word.length; i++)
+  for (var i = 0; i<splitWord.length; i++)
   {
     placeholder = placeholder + "_ "
   }
