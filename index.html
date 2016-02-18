@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+  <link href='https://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
   <title>Mario Hangman</title>
 </head>
 
@@ -27,11 +29,25 @@
     background-repeat: no-repeat !important;
     background-attachment: fixed;
 }
+  #wins {
+    font-size: 40px;
+  }
+  h1 {
+    color: red;
+    font-size: 50px;
+    font-family: 'Sigmar One', cursive;
+  }
+  #placeholder {
+    font-size: 25px;
+    font-family: 'Sigmar One', cursive;
+  }
 </style>
 
 <script type="text/javascript">
-
-
+//MUSIC
+var audio = new Audio('http://a.tumblr.com/tumblr_lkovnnBRQl1qdsuyho1.mp3');
+audio.play();
+//
 //All of variables.
 var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
 var word;
@@ -46,7 +62,6 @@ var wins = 0;
 function newGame() {
   placeholder = "";
   lives = 5;
-  wins = 0;
   word = marioList[Math.floor(Math.random() * marioList.length)];
   splitWord = word.split("");
   currentWord = 0;
@@ -93,7 +108,8 @@ document.onkeyup = function(event) {
   //If you run out of lives, the game restarts.
   if (lives == 0)
     {
-      alert("You lose. Goodbye.");
+      var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb3/smb3_game_over.wav');
+      audio.play();
       newGame();
     }
 }
