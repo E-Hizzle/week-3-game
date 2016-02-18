@@ -19,6 +19,7 @@
    <div id="userGuess"></div>
 </div>
 <body>
+
 <style type="text/css">
   #placeholder {
     letter-spacing: 0.5em;
@@ -51,10 +52,10 @@
 </style>
 
 <script type="text/javascript">
-//MUSIC
-var audio = new Audio('http://66.90.91.26/ost/super-mario-compact-disco/wjhvuohlxl/02-super-mario-bros.-theme.mp3');
-audio.play();
-//
+  //MUSIC
+  var audio = new Audio('http://66.90.91.26/ost/super-mario-compact-disco/wjhvuohlxl/02-super-mario-bros.-theme.mp3');
+  audio.play();
+  //
 //All of variables.
 var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
 var word;
@@ -94,6 +95,9 @@ document.onkeyup = function(event) {
   for (var i = 0;i<splitWord.length;i++) {
     //If correct.
     if (userGuess == word.substring(i, i + 1)) {
+        var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb2/smb2_coin.wav');
+      audio.play();
+
       correct++;
       placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
       document.getElementById("placeholder").innerHTML = placeholder;
