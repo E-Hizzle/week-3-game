@@ -94,6 +94,7 @@ function newGame() {
     wins = 0;
   }
   word = marioList[Math.floor(Math.random() * marioList.length)];
+  console.log(word);
   splitWord = word.split("");
   currentWord = 0;
   var html = "Wins: " + wins;
@@ -134,6 +135,7 @@ document.onkeyup = function(event) {
   if (placeholder.indexOf("_") == -1)
     {
       wins++;
+      lives++;
       var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb3/smb3_1-up.wav');
       audio.play();
       newGame();
