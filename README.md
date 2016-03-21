@@ -6,7 +6,7 @@
 * CSS3*
 * JavaScript
 * a cool Mario Theme Song remix
-* transparent .gif's*
+* transparent .gif's
 * and the Google Fonts API.
 
 # Screenshots:
