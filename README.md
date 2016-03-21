@@ -13,9 +13,8 @@
 
 <p align="center">
 <span>
-<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/1.png" width="50%" height="auto"/>
-
-<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/2.png" width="50%" height="auto"/>
+<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/1.png" width="48%" height="auto"/>
+<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/2.png" width="48%" height="auto"/>
 </span>
 </p>
 
