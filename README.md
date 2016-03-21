@@ -12,9 +12,11 @@
 # Screenshots:
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/1.png" width="100%" height="auto"/>
+<span>
+<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/1.png" width="50%" height="auto"/>
 
-<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/2.png" width="100%" height="auto"/>
+<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/2.png" width="50%" height="auto"/>
+</span>
 </p>
 
 <p align="center">
