@@ -1,9 +1,11 @@
-<html><head>
+<html>
+<head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="./Mario Hangman_files/css" rel="stylesheet" type="text/css">
+  <link href="assets/css/style.css" rel="stylesheet" type="text/css">
   <title>Mario Hangman</title>
-<style type="text/css"></style><style type="text/css"></style></head>
-<body><div style="text-align: center;">
+</head>
+<body>
+<div style="text-align: center;">
    <h1>
    <img src="http://rs862.pbsrc.com/albums/ab187/rocker_4u/thth4r1sewl.gif~c200" width="50" height="50">
    Welcome to Mario Hangman!
@@ -16,145 +18,9 @@
    <div id="wins">Wins: 0</div>
    <div id="showLetter"></div>
 </div>
-
-
-<!-- STYLE -->
-<style type="text/css">
-  #placeholder {
-    letter-spacing: 0.5em;
-  }
-  body {
-    background-image: url("http://wallpapercave.com/wp/7pDoP2C.png");
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: top center !important;
-    background-repeat: no-repeat !important;
-    background-attachment: fixed;
-  }
-  #wins {
-    font-size: 40px;
-        font-family: 'Sigmar One', cursive;
-
-  }
-  #gamestatus {
-    font-family: 'Sigmar One', cursive;
-    color: purple;
-
-  }
-  h1 {
-    color: red;
-    font-size: 40px;
-    font-family: 'Sigmar One', cursive;
-  }
-  #placeholder {
-    font-size: 25px;
-    font-family: 'Sigmar One', cursive;
-  }
-  #marioImage {
-    position: relative;
-    bottom: 20px;  
-  }
-  footer {
-    position: fixed;
-    bottom: 25px;
-    text-align: center;
-    left: 42.5%;
-  }
-  #lives {
-    font-size: 25px;
-    font-family: 'Sigmar One', cursive;
-    color: orange;
-  }
-</style>
-<!-- STYLE -->
-
-<script type="text/javascript">
-  //MUSIC
-  var audio = new Audio('http://66.90.91.26/ost/super-mario-compact-disco/wjhvuohlxl/02-super-mario-bros.-theme.mp3');
-  audio.play();
-  //
-//All of variables.
-var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
-var word;
-var lives =1;
-var guess;
-var placeholder;
-var correct;
-var wordLength;
-var wordSubstring;
-var wins = 0;
-//----------------
-function newGame() {
-  placeholder = "";
-  if (lives == 0) 
-  {
-    lives = 10;
-    wins = 0;
-  }
-  word = marioList[Math.floor(Math.random() * marioList.length)];
-  console.log(word);
-  splitWord = word.split("");
-  currentWord = 0;
-  var html = "Wins: " + wins;
-  document.querySelector("#wins").innerHTML = html;
-  wordLength = word.length;
-  wordSubstring = word.substring;
-  //Adding underscores for every character in the phrase. SUCCESS.
-  for (var i = 0; i<splitWord.length; i++)
-  {
-    placeholder = placeholder + "_";
-  }
-document.getElementById("placeholder").innerHTML = placeholder;
-document.getElementById("gamestatus").innerHTML = "Push any key to begin.";
-//----------------
-}
-// Function to transfer keypress to userguess.
-document.onkeyup = function(event) {
-  var guess;
-  var correct = 0;
-  var showLetter =[];
-  var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
-  console.log(word);
-  var showLetter = showLetter + userGuess;
-  for (var i = 0;i<splitWord.length;i++) {
-    //If correct.
-    if (userGuess == word.substring(i, i + 1)) {
-      var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb2/smb2_coin.wav');
-      audio.play();
-      correct++;
-      placeholder = placeholder.substring(0, i) + userGuess + placeholder.substring(i +1, placeholder.length +1);
-      document.getElementById("placeholder").innerHTML = placeholder;
-    }
-  }
-  if (correct == 0)
-    {
-      lives--;
-    }
-  if (placeholder.indexOf("_") == -1)
-    {
-      wins++;
-      lives++;
-      var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb3/smb3_1-up.wav');
-      audio.play();
-      newGame();
-    }
-  //If you run out of lives, the game restarts.
-  if (lives == 0)
-    {
-      var audio = new Audio('http://themushroomkingdom.net/sounds/wav/smb3/smb3_game_over.wav');
-      audio.play();
-      newGame();
-    }
-    var html2 = "Lives: " + lives;
-    document.querySelector("#lives").innerHTML = html2;
-
-}
-newGame();
-//----------------
-</script>
-
+<script src="assets/javascript/game.js"></script>
 <footer>
   <img src="http://31.media.tumblr.com/b1f2ccf6f2540069f197980659267e2b/tumblr_myj621dcMH1rby4vso1_500.gif" height="80" width="auto">
 </footer>
-</body><style id="stylish-1" class="stylish" type="text/css">/* Created by Antonio Ferreiro Ferrero AKA "a3cAnton" 09-05-2012 */
-@namespace url(http://www.w3.org/1999/xhtml);</style></html>
+</body>
+</html>

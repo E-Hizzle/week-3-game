@@ -1,0 +1,45 @@
+  #placeholder {
+    letter-spacing: 0.5em;
+  }
+  body {
+    background-image: url("http://wallpapercave.com/wp/7pDoP2C.png");
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: top center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed;
+  }
+  #wins {
+    font-size: 40px;
+        font-family: 'Sigmar One', cursive;
+
+  }
+  #gamestatus {
+    font-family: 'Sigmar One', cursive;
+    color: purple;
+
+  }
+  h1 {
+    color: red;
+    font-size: 40px;
+    font-family: 'Sigmar One', cursive;
+  }
+  #placeholder {
+    font-size: 25px;
+    font-family: 'Sigmar One', cursive;
+  }
+  #marioImage {
+    position: relative;
+    bottom: 20px;  
+  }
+  footer {
+    position: fixed;
+    bottom: 25px;
+    text-align: center;
+    left: 42.5%;
+  }
+  #lives {
+    font-size: 25px;
+    font-family: 'Sigmar One', cursive;
+    color: orange;
+  }
