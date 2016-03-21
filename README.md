@@ -19,7 +19,8 @@
 </p>
 
 ##Notes:
-This was my first experience with JavaScript that was implemented into an app. What I found most challenging was to display a blank for each letter of the answer and to then append letters to the specific blanks on user keypress.
+This was my first experience with JavaScript that was implemented into an app. What I found most challenging was to display a blank for each letter of the answer and to then append letters to the specific blanks on user keypress. I'm hoping to come back to this app, one day, and to tweak it a bit. It is still missing the functionality of a div that will show letters that have already been used by the user. I am also planning to create a leaderboard that will display the users that were able to get the furthest in the game.
+
 <p align="center">
 &copy; Eric Ho
 </p>
