@@ -3,7 +3,7 @@
 
 # Created with:
 * HTML5 
-* CSS3*
+* CSS3
 * JavaScript
 * a cool Mario Theme Song remix
 * transparent .gif's
