@@ -11,10 +11,11 @@
 
 # Screenshots:
 
-- <img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/1.png" width="800px" height="auto"/>
+<p align="center">
+<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/1.png" width="100%" height="auto"/>
 
-- <img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/2.png" width="800px" height="auto"/>
-
+<img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/2.png" width="100%" height="auto"/>
+</p>
 
 <p align="center">
 &copy; Eric Ho
