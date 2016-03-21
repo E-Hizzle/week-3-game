@@ -1,4 +1,4 @@
-# App is live at: 
+#App is live at: 
 - http://mario-hangman.herokuapp.com/
 
 # Created with:
@@ -9,7 +9,7 @@
 * transparent .gif's
 * and the Google Fonts API.
 
-# Screenshots:
+#Screenshots:
 
 <p align="center">
 <span>
@@ -18,6 +18,8 @@
 </span>
 </p>
 
+##Notes:
+This was my first experience with JavaScript that was implemented into an app. What I found most challenging was to display a blank for each letter of the answer and to then append letters to the specific blanks on user keypress.
 <p align="center">
 &copy; Eric Ho
 </p>
