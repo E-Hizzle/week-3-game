@@ -2,16 +2,16 @@
   var audio = new Audio('http://66.90.91.26/ost/super-mario-compact-disco/wjhvuohlxl/02-super-mario-bros.-theme.mp3');
   audio.play();
   //
-//All of variables.
-var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
-var word;
-var lives =1;
-var guess;
-var placeholder;
-var correct;
-var wordLength;
-var wordSubstring;
-var wins = 0;
+  //All of variables.
+  var marioList = ["mario", "wario", "question", "item", "peach", "daisy", "yoshi", "bowser", "toad", "boo", "birdo", "shell", "coins"];  
+  var word;
+  var lives =1;
+  var guess;
+  var placeholder;
+  var correct;
+  var wordLength;
+  var wordSubstring;
+  var wins = 0;
 //----------------
 function newGame() {
   placeholder = "";
