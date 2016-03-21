@@ -9,4 +9,4 @@ Screenshots:
 - <img src="https://raw.githubusercontent.com/eric-h0/marioHangman/master/screenshots/2.png" width="800px" height="auto"/>
 
 
-&copy; Eric Ho
+-> &copy; Eric Ho <-
