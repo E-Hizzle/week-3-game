@@ -1,4 +1,4 @@
-https://http://mario-hangman.herokuapp.com/
+App is live at: http://mario-hangman.herokuapp.com/
 
 Created with HTML5, CSS3, JavaScript, a cool Mario Theme Song remix, transparent .gif's, and the Google Fonts API.
 
